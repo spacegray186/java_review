@@ -81,7 +81,6 @@ public class Test05_quiz {
 //			for(b=2; b<=100; b++) {
 //				System.out.printf("%d/%d", a, b);
 //			}
-//			System.out.println("결과");
 //		}
 		
 		// 풀이
@@ -96,7 +95,7 @@ public class Test05_quiz {
 				flag=true;
 			}//if end
 		}//for end
-		System.out.println(hap); // 0/688172
+		System.out.println(hap); // 0.688172
 		
 		
 		//문4)아래와 같이 계산해서 출력하시오
