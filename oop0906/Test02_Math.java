@@ -34,6 +34,6 @@ public class Test02_Math {
 		//문2) 로또번호 범위 : 1~45
 		System.out.println((int)(Math.random()*45)+1);
 		
-	}
+	}//main() end
 
-}
+}//class end

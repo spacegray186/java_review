@@ -5,7 +5,6 @@ public class Test04_for {
 	public static void main(String[] args) {
 		// 반복문
 		
-		
 		//1. for문
 		for(int a=1; a<=3; a++) {
 			System.out.println("JAVA");

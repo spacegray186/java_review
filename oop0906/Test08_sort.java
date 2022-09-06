@@ -6,7 +6,7 @@ public class Test08_sort {
 		// 정렬 Sort
 		/*
 		 	- 정렬유형
-		 		오름차순 ascending		1->10	A->Z	a->z	ㄱ->ㅎ
+		 		오름차순 ascending		1->10  A->Z  a->z  ㄱ->ㅎ
 		 		내림차순 descending
 		 		
 		 	- 정렬방식
@@ -38,7 +38,6 @@ public class Test08_sort {
 		
 		int[] su= {9,8,7,6,5};
 		
+	}//main() end
 
-	}
-
-}
+}//class end

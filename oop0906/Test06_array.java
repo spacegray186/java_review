@@ -29,7 +29,7 @@ public class Test06_array {
 		
 		//kor배열 요소의 개수
 		System.out.println(kor.length);	//3
-		//////////////////////////////////////////////////////////////
+		//////////////////////////////////////////////////////////
 		
 		
 		//메모리 할당 및 초기값 지정
@@ -37,7 +37,7 @@ public class Test06_array {
 		for(int i=0; i<eng.length; i++) {
 			System.out.println(eng[i]);
 		}//for end
-		////////////////////////////////////////////////////////////
+		//////////////////////////////////////////////////////////
 		
 		double[] aver= {1.2, 3.4, 5.6};
 		for(int i=0; i<aver.length; i++) {
@@ -62,7 +62,7 @@ public class Test06_array {
 		// → 행, 줄, row
 		
 		//2행3열
-		int[][] mat=new int[2][3];	//4바이트*6 → 24바이트 메모리 할당
+		int[][] mat=new int[2][3];	//4바이트*6개 → 24바이트 메모리 할당
 		mat[0][0]=10;
 		mat[0][1]=20;
 		mat[0][2]=30;
@@ -85,10 +85,9 @@ public class Test06_array {
 		System.out.println(mat[0].length);	//3	mat[0]행의 열의 개수
 		System.out.println(mat[1].length);	//3	mat[1]행의 열의 개수
 		////////////////////////////////////////////////////////////
-		System.out.println();
 		
 		
-		//2차원 배열에서 각행의 열의 개수는 달라도 된다
+		//2차원 배열에서 각 행의 열의 개수는 달라도 된다
 		int[][] music= {
 							{10, 20}
 							,{30, 40, 50, 60}
@@ -110,6 +109,6 @@ public class Test06_array {
 			System.out.println();
 		}//for end
 		
-	}
+	}//main() end
 
-}
+}//class end

@@ -40,6 +40,7 @@ public class Test07_quiz {
 		
 		//문2)대소문자를 서로 바꿔서 출력하시오
 		//-> iTwILL
+		
 //		int i=0;
 //		for(i=0; i<6; i++) {
 //			if(ch[i]>='A' && ch[i]<='Z') {
@@ -55,17 +56,16 @@ public class Test07_quiz {
 		for(int i=0; i<size; i++) {
 			if(ch[i]>='A' && ch[i]<='Z') {
 				System.out.printf("%c", ch[i]+32);
-			}
+			}//if end
 			
 			if(ch[i]>='a' && ch[i]<='z') {
 				System.out.printf("%c", ch[i]-32);				
-			}
-		}
+			}//if end
+		}//for end
 		
 		
 		//문3)모음의 개수를 구하시오 (A E I O U a e i o u)
 		//->모음의 개수 : 2개
-		////////////////////////////////////////////////////////
 		
 //		int mo=0;
 //		for(i=0; i<6; i++) {
@@ -81,7 +81,7 @@ public class Test07_quiz {
 			char c=ch[i];
 			if(c>='A' && c<='Z') {	//대문자인지?
 				c=(char)(c+32);		//소문자로 변경
-			}
+			}//if end
 			
 			switch(c) {
 				case 'a':
@@ -89,8 +89,8 @@ public class Test07_quiz {
 				case 'i':
 				case 'o':
 				case 'u': mo++;
-			}
-		}
+			}//switch end
+		}//for end
 		
 		System.out.printf("\n모음의 개수: %d\n", mo);
 		////////////////////////////////////////////////////////
@@ -143,7 +143,6 @@ public class Test07_quiz {
 			System.out.printf("\n str[%d]행 모음의 개수 : %d개", r, count);
 			count=0;	//각 행마다 모음의 개수를 구하기 때문에 초기화해야 함
 		}//for end
-		
 		////////////////////////////////////////////////////////
 		
 		
@@ -193,6 +192,6 @@ public class Test07_quiz {
 		System.out.printf("\n대각선 ↘ 방향의 합 : %d", hap1);
 		System.out.printf("\n대각선 ↙ 방향의 합 : %d", hap2);
 		
-	}
+	}//main() end
 	
-}
+}//class end

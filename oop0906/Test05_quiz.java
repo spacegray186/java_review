@@ -25,18 +25,19 @@ public class Test05_quiz {
 //		}
 //		System.out.println();
 		
-		
 		//풀이
 		int count=0;
 		for(char ch='A'; ch<='Z'; ch++) {
 			count++;
 			System.out.print(ch);
-//			System.out.print(count);
+			//System.out.print(count);
 			if(count%5==0) {
 				System.out.println();
 			}//if end
 		}//for end
+		//////////////////////////////////////////////////
 		System.out.println();
+		
 		
 		//문2)아래와 같이 출력하시오
         /*
@@ -54,8 +55,6 @@ public class Test05_quiz {
 //			System.out.print("0");
 //		}
 		
-		
-	
 		//풀이
 		for(int a=1; a<=4; a++) {
 			for(int b=1; b<=4; b++) {
@@ -67,6 +66,7 @@ public class Test05_quiz {
 			}//for end
 			System.out.println();
 		}//for end
+		//////////////////////////////////////////////////////
 		System.out.println();
 		
 
@@ -81,6 +81,7 @@ public class Test05_quiz {
 //			for(b=2; b<=100; b++) {
 //				System.out.printf("%d/%d", a, b);
 //			}
+//			System.out.println("결과");
 //		}
 		
 		// 풀이
@@ -96,6 +97,7 @@ public class Test05_quiz {
 			}//if end
 		}//for end
 		System.out.println(hap); // 0.688172
+		//////////////////////////////////////////////////
 		
 		
 		//문4)아래와 같이 계산해서 출력하시오
@@ -107,6 +109,7 @@ public class Test05_quiz {
            81+....+90=
            91+....+100=955   
         */
+		
 		//풀이
 		
 		int sum=0;
@@ -117,11 +120,12 @@ public class Test05_quiz {
 			System.out.println((a-9) + "+...+" + a + "=" + sum);
 			sum=0;
 		}//for end
+		/////////////////////////////////////////////////////////////////
 
 		
 		//문5)어느 달팽이는 낮에는 3cm올라가고, 밤에는 2.5cm 내려온다고 할때
         //   달팽이가 13cm의 나무 꼭대기에 올라가려면 며칠이 걸리는지 구하시오
-		int day=0;			//결과값
+		int day=0;			//결과 값
 		double snail=0.0;	//달팽이
 		
 		while(true) {
@@ -133,6 +137,7 @@ public class Test05_quiz {
 				snail=snail-2.5;
 			}//if end
 		}//while end
+		
 		System.out.println(day+"일");
 		
 		
