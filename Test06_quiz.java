@@ -26,7 +26,7 @@ public class Test06_quiz {
         int hour=total/3600;
         System.out.println(hour+"시간");
         
-        taotal=total%3600;
+        total=total%3600;
         int minute=total/60;
         System.out.println(minute+"분");
         
