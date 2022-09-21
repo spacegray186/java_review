@@ -40,36 +40,94 @@ public class Test05_sungjuk {
 		
 		
 		try {
+			
+			//1)단계 : 데이터 저장 변수 선언
+			String[] name = new String[5];
+			int[] kor = new int[5];
+			int[] eng = new int[5];
+			int[] mat = new int[5];
+			int[] aver = new int[5];
+			int[] rank = {1, 1, 1, 1, 1};
+			
+			int size=name.length;	//5
+			int i=0;
+			
+			
+			//2)단계 : 데이터 입력 파일(sungjuk.txt) 가져와서 내용을 읽기
 			fr=new FileReader(inName);
 			br=new BufferedReader(fr);
 			
+			while(true) {
+				String line=br.readLine();	//"무궁화,95,90,100"
+				if(line==null) {
+					break;
+				}//if end
+				//System.out.println(line);
+				
+				// , 를 기준으로 문자열 분리한 후 1)단계에서 선언한 변수에 저장하기
+				String[] word = line.split(",");
+				name[i] = word[0].trim();
+				kor[i] = Integer.parseInt(word[1].trim());
+				eng[i] = Integer.parseInt(word[2].trim());
+				mat[i] = Integer.parseInt(word[3].trim());
+				i++;	//다음사람				
+			}//while end
+			
+			
+			//3)단계 : 평균구하기
+			for(i=0; i<size; i++) {
+				aver[i] = (kor[i]+eng[i]+mat[i])/3;
+			}//for end
+			
+			
+			//4)단계 : 등수구하기(평균을 기준으로)
+			for(i=0; i<size; i++) {
+				for(int j=0; j<size; j++) {
+					if(aver[i]<aver[j]) {
+						rank[i]=rank[i]+1;
+					}//if end
+				}//for end
+			}//for end
+			
+			
+			//5)단계 : result.txt 결과 출력하기
 			fw=new FileWriter(outName, false);
-			out=new PrintWriter(fw, true);
+			out=new PrintWriter(fw, true);	//true로 해야 쓰레기값이 들어가지 않는다. 반드시 true로 두기
 			
-			
-						
-//			int num=0;
-//			
-//			while(true) {
-//				String line=br.readLine();
-//				if(line==null) {
-//					break;
-//				}
-//				System.out.println(line);
-//				
-//			}
-
-			
-			out.println("			성 / 적 / 결 /과");
-			out.println("--------------------------------------------------------------------");
+			out.println("			성/적/결/과");
+			out.println("――――――――――――――――――――――――――――――――――――――――――");
 			out.println("이름	국어	영어	수학	평균	등수	결과");
-			out.println("--------------------------------------------------------------------");
-			out.println("라일락    100  100  100   100   1    합격 ********** 장학생");
-			out.println("진달래     50   55   60    55   4    불합격 *****");
-			out.println("개나리     95   95   35    75   3    재시험 *******");
-			out.println("무궁화     80   85   90    85   2    합격 ********");
-			out.println("홍길동     60   40   30    43   5    불합격 ****");
-			out.println("--------------------------------------------------------------------");
+			out.println("――――――――――――――――――――――――――――――――――――――――――");
+			
+			//5명의 데이터 출력하기
+			for(i=0; i<size; i++) {
+				out.printf("%-6s	%5d	%5d	%5d	%5d	%5d", name[i], kor[i], eng[i], mat[i], aver[i], rank[i]);
+				
+				//과락
+				if(aver[i]>=70) {
+					if(kor[i]<40 || eng[i]<40 || mat[i]<40) {
+						out.printf("%-10s", "	재시험");
+					}else {
+						out.printf("%-10s", "	합   격");
+					}//if end
+				}else {
+					out.printf("%-10s", "	불합격");
+				}//if end
+				
+				//평균 10점당 * 한개씩
+				for(int star=1; star<=aver[i]/10; star++) {
+					out.printf("%c", '*');
+				}//for end
+				
+				//평균 95점이상 장학생
+				if(aver[i]>=95) {
+					out.printf("%-12s", " 장학생");
+				}//if end
+								
+				out.println();	//한사람 출력하고 줄바꿈
+			}//for end
+						
+			System.out.println("result.txt 성적프로그램이 완성되었습니다");
 			
 		}catch (Exception e) {
 			System.out.println("성적 프로그램 읽고, 쓰기 실패 : " + e);
